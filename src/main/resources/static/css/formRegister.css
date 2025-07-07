@@ -1,0 +1,130 @@
+/* Reset base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.custom-navbar {
+    background-color: rgb(83, 166, 166);
+}
+
+.logo-text {
+    font-weight: bold;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('/images/wallpaper.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.login-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.login-form {
+    background: #ffffff;
+    padding: 1.5rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* più ampio */
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 1.2rem;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 0.5rem; /* meno spazio tra campi */
+}
+
+label {
+    display: block;
+    margin-bottom: 0.15rem; 
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.55rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+
+.form-row {
+    display: flex;
+    gap: 1rem; /* distanza tra Name e Surname */
+    margin-bottom: 1rem;
+}
+
+.form-half {
+    flex: 1; /* prende metà spazio */
+}
+
+
+
+.login-btn {
+    width: 100%;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #53a6a6;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-top: 0.8rem;
+}
+
+.login-btn:hover {
+    background-color: #469696;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.signup-link a {
+    color: #53a6a6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Errori */
+span[style*="color:red"] {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.85rem;
+}

@@ -1,0 +1,66 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-navbar {
+  background-color: rgb(83, 166, 166);
+}
+
+/* Applica Poppins a tutto */
+html, body, input, button, select, textarea {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Escludi solo il logo (in modo diretto) */
+.logo-text {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.form-container {
+    background-color:	#d1eeee;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-weight: bold;
+    color: #333;
+}
+
+.btn-primary {
+    background-color: rgb(83, 166, 166);
+    border-color: rgb(83, 166, 166);
+}
+
+.btn-primary:hover {
+    background-color: rgb(70, 150, 150);
+    border-color: rgb(70, 150, 150);
+}
+
+/* Selettore con focus */
+select.form-select:focus {
+  border-color: rgb(70, 150, 150);
+  box-shadow: 0 0 0 0.2rem rgba(83, 166, 166, 0.25);
+}
+
+input,
+textarea,
+select {
+  border: 2px solid rgb(83, 166, 166) !important;
+  border-radius: 6px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: rgb(70, 150, 150) !important;
+  box-shadow: none !important;
+  outline: none;
+}

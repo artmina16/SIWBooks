@@ -1,0 +1,148 @@
+body {
+    font-family: 'Poppins', sans-serif;
+	background-color:	#d1eeee;
+}
+
+.custom-navbar {
+    background-color: rgb(83, 166, 166);
+}
+
+.logo-icon {
+  font-size: 1.6rem;
+  margin-top: 2px; /* abbassa leggermente l'icona */
+}
+
+
+/* Escludi solo il logo (in modo diretto) */
+.logo-text {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+/* Base style for all buttons */
+button.btn,
+a.btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Success button (Save, Update Username) */
+.btn-success {
+    background-color: rgb(83, 166, 166);
+    border-color: rgb(83, 166, 166);
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: rgb(83, 166, 166);
+    border-color: rgb(83, 166, 166);
+}
+
+/* Primary button (Change password) */
+.btn-primary {
+    background-color: rgb(83, 166, 166);
+    border-color: rgb(83, 166, 166);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: rgb(83, 166, 166);
+    border-color: rgb(83, 166, 166);
+}
+
+
+/* Outline secondary button (Back to profile) */
+.btn-outline-secondary {
+    color: rgb(83, 166, 166);
+    border-color: rgb(83, 166, 166);
+}
+
+.btn-outline-secondary:hover {
+    background-color: rgb(156, 205, 205) !important;
+    color: white;
+}
+
+
+
+/* Outline light navbar button */
+.btn-outline-light {
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-outline-light:hover {
+    background-color: #fff;
+    color: #212529;
+}
+
+/* Focus style for all buttons */
+button.btn:focus,
+a.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgb(156, 205, 205); 
+	background-color: rgb(156, 205, 205) !important;
+    transition: box-shadow 0.2s ease-in-out;
+	border-color: rgb(156, 205, 205) !important;
+}
+
+/* Focus style specifico per btn-success */
+.btn-success:focus {
+    box-shadow: 0 0 0 0.2rem rgb(156, 205, 205);
+	background-color: rgb(156, 205, 205) !important;
+	border-color: rgb(156, 205, 205) !important;
+
+}
+
+/* Focus style specifico per btn-primary */
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgb(156, 205, 205);
+	background-color: rgb(156, 205, 205) !important;
+	border-color: rgb(156, 205, 205) !important;
+
+}
+
+/* Focus style specifico per btn-outline-secondary */
+.btn-outline-secondary:focus {
+    box-shadow: 0 0 0 0.2rem rgb(156, 205, 205);
+	background-color: rgb(156, 205, 205) !important;
+	border-color: rgb(156, 205, 205) !important;
+
+}
+
+/* Focus style specifico per btn-outline-light */
+.btn-outline-light:focus {
+    box-shadow: 0 0 0 0.2rem rgb(156, 205, 205);
+	background-color: rgb(156, 205, 205) !important;
+	border-color: rgb(156, 205, 205) !important;
+
+}
+
+/* Titolo principale (verde scuro personalizzato) */
+.custom-title-success {
+    color: rgb(83, 166, 166); 
+}
+
+/* Titolo per azioni (blu elegante) */
+.custom-title-primary {
+    color: rgb(83, 166, 166);
+}
+
+/* Titolo per sicurezza (rosso tenue) */
+.custom-title-danger {
+    color: rgb(83, 166, 166); 
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: rgb(156, 205, 205) !important ;     
+    box-shadow: 0 0 0 0.25rem rgba(83, 166, 166,0.25) !important; 
+    transition: all 0.2s ease-in-out;
+}

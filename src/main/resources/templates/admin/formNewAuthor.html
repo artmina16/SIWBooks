@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Author</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons (optional) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/newAuthor.css}">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+  <div class="container-fluid px-4">
+    <div class="row w-100 align-items-center g-0">
+      <div class="col-6 d-flex align-items-center">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <i class="bi bi-book-half me-2" style="font-size: 1.5rem;"></i>
+          <span class="logo-text">siw-Books</span>
+        </a>
+      </div>
+	  <div class="col-6 d-flex justify-content-end align-items-center">
+      	<a href="/" class="btn btn-outline-light rounded-pill px-4 fw-bold">Home</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Form Container -->
+<div class="container mt-5 form-container">
+    <h2 class="mb-4">Add a New Author</h2>
+
+    <form th:action="@{/author/new}" method="post" th:object="${author}" enctype="multipart/form-data" class="needs-validation" novalidate>
+		<div class = "globalError" th:if="${#fields.hasGlobalErrors()}">
+           <span class = "error" th:each="err : ${#fields.globalErrors()}" th:text="${err}" style="color:red"></span>
+        </div>
+        <!-- Name -->
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input th:field="*{name}" type="text" class="form-control" id="name">
+            <div th:if="${#fields.hasErrors('name')}" class="alert alert-danger p-2 py-1 mt-2">
+                <i class="bi bi-exclamation-circle"></i>
+                <span th:errors="*{name}"></span>
+            </div>
+        </div>
+
+        <!-- Surname -->
+        <div class="mb-3">
+            <label for="surname" class="form-label">Surname</label>
+            <input th:field="*{surname}" type="text" class="form-control" id="surname">
+            <div th:if="${#fields.hasErrors('surname')}" class="alert alert-danger p-2 py-1 mt-2">
+                <i class="bi bi-exclamation-circle"></i>
+                <span th:errors="*{surname}"></span>
+            </div>
+        </div>
+
+        <!-- Born Year -->
+        <div class="mb-3">
+            <label for="bornYear" class="form-label">Date of Birth</label>
+            <input th:field="*{bornYear}" type="date" class="form-control" id="bornYear">
+            <div th:if="${#fields.hasErrors('bornYear')}" class="alert alert-danger p-2 py-1 mt-2">
+                <i class="bi bi-exclamation-circle"></i>
+                <span th:errors="*{bornYear}"></span>
+            </div>
+        </div>
+
+        <!-- Death Year -->
+        <div class="mb-3">
+            <label for="deathYear" class="form-label">Date of Death (optional)</label>
+            <input th:field="*{deathYear}" type="date" class="form-control" id="deathYear">
+        </div>
+
+        <!-- Nationality -->
+        <div class="mb-3">
+            <label for="nationality" class="form-label">Nationality</label>
+            <input th:field="*{nationality}" type="text" class="form-control" id="nationality">
+            <div th:if="${#fields.hasErrors('nationality')}" class="alert alert-danger p-2 py-1 mt-2">
+                <i class="bi bi-exclamation-circle"></i>
+                <span th:errors="*{nationality}"></span>
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea th:field="*{description}" class="form-control" id="description" rows="4"></textarea>
+        </div>
+
+        <!-- Image File Upload -->
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload Image</label>
+            <input type="file" name="image" class="form-control" id="image">
+        </div>
+
+        <!-- Buttons -->
+        <button type="submit" class="btn btn-primary">Save Author</button>
+        <a href="/admin/formNewBook" class="btn btn-secondary">Back to Book Form</a>
+		<a href="/admin/manageAuthors" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+Caso d'uso UC1: Inserimento nuovo libro (amministratore)
+1. Un Amministratore inserisce username e password nel Sistema. Il Sistema verifica la correttezza dei dati inseriti e autentica l'Amministratore.
+2. L'Amministratore seleziona l'attività "Inserimento nuovo libro".
+3. L'Amministratore inserisce il titolo, l'anno di pubblicazione, una descrizione, una o più immagini e gli autori del libro, e conferma l'inserimento del libro.
+4. Il Sistema registra le informazioni sul libro, assegnandovi un codice identificativo univoco. Da questo momento in poi, gli Utenti (registrati e non) potranno visualizzare il libro aggiunto nella lista dei libri.
+
+
+Caso d'uso UC2: Scelta di uno o più autori per un libro (amministratore)
+1. Un Amministratore inserisce username e password nel Sistema. Il Sistema verifica la correttezza dei dati inseriti e autentica l'Amministratore.
+2. L'Amministratore accede all'elenco dei libri registrati nel Sistema, ne sceglie uno e seleziona l'opzione "Gestisci autori" (opzione disponibile solo al ruolo di Amministratore). Il Sistema mostra un elenco di autori già aggiunti al libro e l'elenco degli autori rimanenti.
+L'Amministratore ripete il passo 3 per ogni autore che vuole aggiungere o rimuovere dal libro, finché non sceglie l'opzione "Termina".
+3. L'Amministratore sceglie un Autore da aggiungere o rimuovere dal Libro, e sceglie rispettivamente l'opzione "Aggiungi" o "Rimuovi". Il Sistema registra la modifica effettuata dall'Amministratore.
+
+Caso d'uso UC3: Inserimento nuovo autore (amministratore)
+1. Un Amministratore inserisce username e password nel Sistema. Il Sistema verifica la correttezza dei dati inseriti e autentica l'Amministratore.
+2. L'Amministratore seleziona l'attività "Inserimento nuovo autore".
+3. L'Amministratore inserisce il nome, il cognome, la data di nascita, la data di morte, una descrizione un'immagine, e conferma l'inserimento dell'autore.
+4. Il Sistema registra le informazioni sull'autore, assegnandovi un codice identificativo univoco. Da questo momento in poi, gli Utenti (registrati e non) potranno visualizzare l'autore aggiunto alla lista di autori.
+
+
+Caso d'uso UC4: Inserimento nuova recensione (utente registrato)
+1. Un Utente inserisce lo username e la password nel Sistema. Il Sistema verifica la correttezza dei dati inseriti e autentica l'Utente.
+2. L'Utente accede all'elenco dei libri registrati nel Sistema, ne sceglie uno e seleziona l'opzione "Inserisci recensione" (opzione disponibile solo per gli Utenti autenticati).
+3. L'Utente inserisce un titolo, un testo e un voto (compreso tra 1 e 5) per la recensione, e conferma l'inserimento.
+4. Il Sistema registra le informazioni sulla recensione, assegnandovi un codice identificativo univoco. Da questo momento in poi, gli Utenti (registrati e non) potranno visualizzare la recensione del libro.
+
+Caso d'uso UC5: Modifica recensione (utente registrato)
+1. Un Utente inserisce lo username e la password nel Sistema. Il Sistema verifica la correttezza dei dati inseriti e autentica l'Utente.
+2. L'Utente accede all'elenco dei libri registrati nel Sistema, ne sceglie uno e seleziona l'opzione "Modifica recensione" (opzione disponibile solo agli Utenti autenticati).
+3. L'Utente inserisce un testo e un voto (compreso tra 1 e 5) per la recensione, e conferma la modifica.
+4. Il Sistema registra le informazioni sulla recensione aggiornata.
+
+Caso d'uso UC6: Visualizza libri (utente generico)
+Un Utente usa il Sistema per visualizzare i Libri registrati. Il Sistema mostra un elenco di Libri, riportandone per ciascuno il titolo, la data di pubblicazione, una descrizione, una o più immagini, uno o più autori e le eventuali recensioni.
+
+Caso d'uso UC7: Visualizza autori (utente generico)
+Un Utente usa il Sistema per visualizzare gli Autori registrati. Il Sistema mostra un elenco di Autori, riportandone per ciascuno il nome, il cognome, la data di nascita, una breve descrizione, l'eventuale data di morte, la nazionalità e una foto.

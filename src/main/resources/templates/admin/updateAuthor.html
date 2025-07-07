@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Author</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="/css/updateAuthor.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+  <div class="container-fluid px-4">
+    <div class="row w-100 align-items-center g-0">
+      <div class="col-6 d-flex align-items-center">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+			<i class="bi bi-book-half me-2 align-middle" style="font-size: 1.5rem; margin-top: 2px;"></i>
+          <span class="logo-text">siw-Books</span>
+        </a>
+      </div>
+	  <div class="col-6 d-flex justify-content-end align-items-center">
+      	<a href="/admin/manageAuthors" class="btn btn-outline-light rounded-pill px-4 fw-bold">List Of Author</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-5">
+  
+	<form th:action="@{'/admin/author/update/' + ${author.id}}" method="post" enctype="multipart/form-data" th:object="${author}">
+	  <div class="row">
+	    <!-- Colonna sinistra: immagine -->
+	    <div class="col-md-4 mb-5 d-flex flex-column align-items-start">
+	      <div class="rounded-circle p-2" style="background: radial-gradient(circle, #fff 50%, #dff5f5 100%);">
+	        <img th:src="@{${author.imagePath}}" alt="Author" class="author-main-img">
+	      </div>
+
+	      <div class="mt-4 w-100 px-6">
+	        <h5 class="section-label">Replace Image</h5>
+	        <input type="file" name="image" class="form-control" style="max-width: 320px;">
+	      </div>
+	    </div>
+
+	    <!-- Colonna destra: campi di input -->
+	    <div class="col-md-8">
+	      <div th:if="${success}" class="alert alert-success alert-dismissible fade show" role="alert">
+	        <i class="bi bi-check-circle-fill me-2"></i>
+	        <span th:text="${success}"></span>
+	        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	      </div>
+
+	      <div th:if="${genericError}" class="alert alert-danger alert-dismissible fade show" role="alert">
+	        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+	        <span th:text="${genericError}"></span>
+	        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	      </div>
+		  
+		  <div th:if="${#fields.hasGlobalErrors()}" class="alert alert-danger alert-dismissible fade show" role="alert">
+  	        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+  	        <span th:each="err : ${#fields.globalErrors()}" th:text="${err}"></span>
+  	        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  	      </div>
+				  
+		  
+	      <h2 class="mb-5 section-title">Edit Author</h2>
+
+	      <!-- ID dei libri associati -->
+	      <div th:each="book : ${author.books}">
+	        <input type="hidden" name="books" th:value="${book.id}" />
+	      </div>
+
+	      <!-- Campi anagrafici -->
+	      <!-- Name + Surname -->
+	      <section class="mb-5">
+	        <div class="row">
+	          <div class="col-md-6">
+	            <h4 class="section-label">Name</h4>
+	            <input type="text" th:field="*{name}" class="editable-input">
+	            <div class="text-danger mt-1" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+	          </div>
+	          <div class="col-md-6">
+	            <h4 class="section-label">Surname</h4>
+	            <input type="text" th:field="*{surname}" class="editable-input">
+	            <div class="text-danger mt-1" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></div>
+	          </div>
+	        </div>
+	      </section>
+
+	      <section class="mb-5">
+	        <h4 class="section-label">Nationality</h4>
+	        <input type="text" th:field="*{nationality}" class="editable-input">
+	        <div class="text-danger mt-1" th:if="${#fields.hasErrors('nationality')}" th:errors="*{nationality}"></div>
+	      </section>
+
+	      <!-- Born + Death -->
+	      <section class="mb-5">
+	        <div class="row">
+	          <div class="col-md-6">
+	            <h4 class="section-label">Born Year</h4>
+	            <input type="date" th:field="*{bornYear}" class="editable-input">
+	            <div class="text-danger mt-1" th:if="${#fields.hasErrors('bornYear')}" th:errors="*{bornYear}"></div>
+	          </div>
+	          <div class="col-md-6">
+	            <h4 class="section-label">Death Year</h4>
+	            <input type="date" th:field="*{deathYear}" class="editable-input">
+	            <div class="text-danger mt-1" th:if="${#fields.hasErrors('deathYear')}" th:errors="*{deathYear}"></div>
+	          </div>
+	        </div>
+	      </section>
+
+	      <section class="mb-5">
+	        <h4 class="section-label">Description</h4>
+	        <textarea th:field="*{description}" class="editable-input" rows="4"></textarea>
+	        <div class="text-danger mt-1" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+	      </section>
+
+	      <button type="submit" class="btn custom-save px-4 rounded-pill fw-semibold">Save Changes</button>
+	    </div>
+	  </div>
+	</form>
+    </div>
+  </div>
+
+  <!-- Sezione libri associati -->
+  <hr class="my-5">
+
+  <div class="row g-5">
+    
+
+	<div class="col-md-6">
+	  <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+	    <h4 class="section-label m-0">Add Books</h4>
+	    <form th:action="@{'/admin/updateAuthor/' + ${author.id}}" method="get" class="search-form m-0">
+	      <div class="custom-search">
+	        <input type="text" name="title" class="search-input" placeholder="Search by title..." th:value="${param.title}">
+	        <button type="submit" class="search-button">
+	          <i class="fas fa-search"></i>
+	        </button>
+	      </div>
+	    </form>
+	  </div>
+
+	  <ul class="author-list">
+	    <!-- Elementi della lista se presenti -->
+	    <li class="author-item" th:each="book : ${booksNotInAuthor}">
+	      <img th:src="${book.getImagePath(book.coverImageUrl)}" class="author-img" alt="Book">
+	      <span class="author-name" th:text="${book.title}">Book</span>
+	      <form th:action="@{'/admin/author/' + ${author.id} + '/add-book/' + ${book.id}}" method="post">
+	        <button type="submit" class="btn btn-sm btn-outline-success ms-auto">Add</button>
+	      </form>
+	    </li>
+
+	    <!-- Messaggio se la lista è vuota -->
+		<li th:if="${#lists.isEmpty(booksNotInAuthor)}" class="no-results">
+		    <i class="fas fa-book-open"></i>
+		    No books found matching your search.
+		  </li>
+	  </ul>
+
+	  <div class="text-danger mt-2" th:if="${authorErrorBookDuplicate}" th:text="${authorErrorBookDuplicate}"></div>
+	</div>
+	
+	<div class="col-md-6" style="margin-top:60px;">
+			<div th:if="${noAuthors}" class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+			    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+			    <span th:text="${noAuthors}"></span>
+			    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			  </div>
+	      <h4 class="section-label">Current Books</h4>
+	      <ul class="author-list">
+	        <li class="author-item" th:each="book : ${author.books}">
+	          <img th:src="${book.getImagePath(book.coverImageUrl)}" class="author-img" alt="Book">
+	          <span class="author-name" th:text="${book.title}">Book</span>
+	          <form th:action="@{'/admin/author/' + ${author.id} + '/remove-book/' + ${book.id}}" method="post">
+	            <button type="submit" class="btn btn-sm btn-outline-danger ms-auto">Remove</button>
+	          </form>
+	        </li>
+	      </ul>
+	    </div>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #e8f5f5;
+    color: #333;
+}
+
+/* Navbar coerente */
+.custom-navbar {
+    background-color: rgb(83, 166, 166);
+}
+
+.logo-text {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* Titolo sezione */
+h2.text-center {
+    font-weight: 600;
+    font-size: 2rem;
+    color: #333;
+    border-bottom: 2px solid rgb(83, 166, 166);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+.row.row-cols-2 {
+    margin-top: 1rem;
+}
+
+
+/* Immagini autori */
+.author-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.author-link:hover .author-img {
+    transform: scale(1.07);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Nome autore */
+.author-name {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+}
+/* Search bar */
+.custom-search {
+  display: flex;
+  align-items: center;
+  border: 2px solid #55bdbd;
+  border-radius: 50px;
+  overflow: hidden;
+  background-color: #fff;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-search:focus-within {
+  border-color: #2c9999;
+  box-shadow: 0 0 6px rgba(85, 189, 189, 0.4);
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+.search-button {
+  background-color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px 20px;
+  color: #2c9999 !important;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-left: 1px solid rgb(255, 255, 255);
+}
+
+.search-button:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+
+
+.no-authors-found {
+    background-color: #ffffffcc; /* bianco leggero con trasparenza */
+    border: 1px solid #bcd;
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.no-authors-found i {
+    color: #aaa;
+}
+
+/* Ingrandimento icona lente al passaggio del mouse */
+.search-button .fa-search {
+  transition: transform 0.2s ease;
+}
+
+.search-button:hover .fa-search {
+  transform: scale(1.3);
+}

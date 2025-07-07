@@ -1,0 +1,39 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.custom-navbar {
+    background-color: rgb(83, 166, 166);
+}
+
+.logo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.custom-title {
+    font-weight: 600;
+    color: #343a40;
+}
+
+.table-header-custom th {
+  background-color: rgb(83, 166, 166) !important;
+  color: white !important;
+}
+
+
+.custom-table-font td,
+.custom-table-font th {
+    vertical-align: middle;
+}
+
+.img-thumbnail {
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+.rating-stars {
+    white-space: nowrap;
+    display: inline-flex;
+    gap: 2px;
+}
