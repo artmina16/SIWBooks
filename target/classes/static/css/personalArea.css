@@ -1,73 +1,57 @@
 body {
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff0f5;
 }
 
+/* Navbar */
 .custom-navbar {
-    background-color: rgb(83, 166, 166);
+  background-color: #ec407a;
 }
 
 .logo-icon {
   font-size: 1.6rem;
-  margin-top: 2px; /* abbassa leggermente l'icona */
 }
 
-
-/* Escludi solo il logo (in modo diretto) */
 .logo-text {
   font-family: 'Segoe UI', sans-serif;
   font-weight: bold;
   font-size: 1.25rem;
+  color: white;
+}
+
+/* Card profilo */
+.custom-card-border {
+  border: 5px solid #f48fb1;
+  border-radius: 12px;
+  background-color: #fff5fa;
 }
 
 .card-title {
-    font-weight: 600;
-    color: #2f4f4f;
+  font-weight: 600;
+  color: #880e4f;
 }
 
-.btn-outline-success {
-    border-radius: 20px;
-    padding: 6px 16px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-success:hover {
-    background-color: rgb(83, 166, 166);
-    color: white;
-    border-color: rgb(83, 166, 166);
-}
-
-.container {
-    max-width: 1300px;
-}
-.rating-stars {
-  white-space: nowrap;
-  min-width: 130px;
-}
-
-.rating-stars i {
-  font-size: 1rem;
-}
-
-.text-lightgray {
-  color: #cccccc !important;
-}
-
-.custom-card-border {
-  border: 6px solid rgb(83, 166, 166); 
-  border-radius: 12px;
-  background-color: #f8fdfc;   
-}
+/* Header tabella recensioni */
 .custom-header {
-  background: linear-gradient(to right, rgb(83, 166, 166), rgb(153, 204, 204), rgb(180, 218, 218));
+  background: linear-gradient(to right, #f06292, #f8bbd0);
   color: white;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   padding: 16px;
 }
 
+/* Stelle */
+.rating-stars i {
+  font-size: 1rem;
+}
+
+.text-lightgray {
+  color: #ddd !important;
+}
+
+/* Pulsante edit */
 .custom-edit-btn {
-  background-color: #53a6a6;         /* colore coerente con navbar */
+  background-color: #ec407a;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -77,21 +61,21 @@ body {
 }
 
 .custom-edit-btn:hover {
-  background-color: #3e8d8d;         /* colore al passaggio del mouse */
-  color: white;
+  background-color: #ad1457;
 }
 
 .custom-edit-btn:focus {
-  background-color: #3e8d8d !important;         /* colore al passaggio del mouse */
-  color: rgb(0, 0, 0);
+  background-color: #ad1457 !important;
+  color: white;
 }
+
+/* Icone azione */
 .action-icon {
-  color: gray;
+  color: #999;
   font-size: 1.2rem;
   transition: color 0.2s ease;
-  text-decoration: none;
 }
 
 .action-icon:hover {
-  color: #000;
+  color: #ec407a;
 }

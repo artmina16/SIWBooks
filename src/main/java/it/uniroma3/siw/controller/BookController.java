@@ -355,7 +355,7 @@ public class BookController {
 	    return "redirect:/admin/updateBook/" + bookId;
 	}
 	
-	@GetMapping("/admin/book/delete/{id}")
+	@PostMapping("/admin/book/delete/{id}")
 	public String deleteBook(@PathVariable("id") Long id, Model model) {
 	    Book book = this.bookService.findById(id);
 	    List<Review> allBookReviews =  this.reviewService.findByBook(book);

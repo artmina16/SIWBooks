@@ -1,157 +1,85 @@
-/* Reset base */
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.custom-navbar {
-  background-color: rgb(83, 166, 166);
-}
-.logo-text {
-  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    position: relative;
-    min-height: 100vh;
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #fce4ec, #f3e5f5);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('/images/wallpaper.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.5; 
-    z-index: -1;
+/* Colori utili */
+.text-pink {
+  color: #ec407a !important;
+}
+.btn-pink {
+  background-color: #ec407a;
+  color: #fff;
+  border-radius: 25px;
+}
+.btn-pink:hover {
+  background-color: #d81b60;
 }
 
+.btn-outline-pink {
+  border: 2px solid #ec407a;
+  color: #ec407a;
+  border-radius: 25px;
+}
+.btn-outline-pink:hover {
+  background-color: #fce4ec;
+}
 
-
+/* Login Form */
 .login-wrapper {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
 .login-form {
-    background: #ffffff;
-    padding: 2rem 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  max-width: 420px;
+  width: 100%;
 }
 
 .login-form h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #333;
-}
-
-.form-group {
-    margin-bottom: 1.2rem;
+  font-family: 'Playfair Display', serif;
+  color: #ec407a;
+  font-size: 2rem;
 }
 
 label {
-    display: block;
-    margin-bottom: 0.4rem;
-    font-weight: bold;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
 }
 
 input[type="text"],
 input[type="password"] {
-    width: 100%;
-    padding: 0.6rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
 }
 
-.login-btn {
-    width: 100%;
-    padding: 0.7rem;
-    border: none;
-    border-radius: 8px;
-    background-color: #53a6a6;
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-}
-
-.login-btn:hover {
-    background-color: #469696;
-}
-
-.signup-link {
-    text-align: center;
-    margin-top: 1rem;
+.error {
+  margin-bottom: 1rem;
 }
 
 .signup-link a {
-    color: #53a6a6;
-    text-decoration: none;
-    font-weight: bold;
+  color: #ec407a;
+  font-weight: bold;
+  text-decoration: none;
 }
-
 .signup-link a:hover {
-    text-decoration: underline;
-}
-
-.custom-footer {
-  background-color: rgb(83, 166, 166);
-  padding: 5px 0;
-  color: rgb(0, 0, 0);
-  font-size: 0.9rem;
-}
-
-
-
-.custom-footer .footer-link {
-  color: #ecf0f1;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-}
-
-.custom-footer .footer-link:hover {
-  color: rgb(64, 128, 128);
-}
-
-.custom-footer {
-  background-color: rgb(83, 166, 166);
-  padding: 5px 0;
-  color: rgb(0, 0, 0);
-  font-size: 0.9rem;
-}
-
-
-.custom-footer .footer-link {
-  color: #ecf0f1;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-}
-
-.custom-footer .footer-link:hover {
-  color: rgb(64, 128, 128);
-}
-
-.error{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-top:5px;
+  text-decoration: underline;
 }

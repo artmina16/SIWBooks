@@ -1,39 +1,77 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #fce4ec, #f3e5f5);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.custom-navbar {
-    background-color: rgb(83, 166, 166);
+/* Colori */
+.text-pink {
+  color: #ec407a !important;
+}
+.text-purple {
+  color: #6a1b9a !important;
 }
 
-.logo-text {
-    font-size: 1.25rem;
-    font-weight: 600;
+/* Bottoni */
+.btn-pink {
+  background-color: #ec407a;
+  color: #ffffff;
+  border-radius: 25px;
+}
+.btn-pink:hover {
+  background-color: #d81b60;
+  color: #fff;
 }
 
-.custom-title {
-    font-weight: 600;
-    color: #343a40;
+.btn-outline-pink {
+  border: 2px solid #ec407a;
+  color: #ec407a;
+  background-color: transparent;
+  border-radius: 25px;
+}
+.btn-outline-pink:hover {
+  background-color: #fce4ec;
+  color: #ec407a;
 }
 
+.btn-custom {
+  border-radius: 25px;
+  font-weight: 600;
+}
+
+/* Titoli */
+.heading-line {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #6a1b9a;
+  border-bottom: 3px solid #ec407a;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Tabella */
 .table-header-custom th {
-  background-color: rgb(83, 166, 166) !important;
-  color: white !important;
+  background-color: #fce4ec;
+  color: #6a1b9a;
+  font-weight: bold;
 }
-
 
 .custom-table-font td,
 .custom-table-font th {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
+/* Immagine */
 .img-thumbnail {
-    border-radius: 0.5rem;
-    object-fit: cover;
+  border-radius: 0.5rem;
+  object-fit: cover;
 }
+
+/* Stelle */
 .rating-stars {
-    white-space: nowrap;
-    display: inline-flex;
-    gap: 2px;
+  white-space: nowrap;
+  display: inline-flex;
+  gap: 2px;
 }

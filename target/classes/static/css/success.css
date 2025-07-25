@@ -6,88 +6,81 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    position: relative;
+    font-family: 'Poppins', sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-}
-
-/* Sfondo opaco */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('/images/wallpaper.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.5;
-    z-index: -1;
+    background: linear-gradient(135deg, #ffe3ec 0%, #f9d6f7 100%);
+    overflow-x: hidden;
 }
 
 /* Navbar */
 .custom-navbar {
-    background-color: rgb(83, 166, 166);
+    background: linear-gradient(to right, #e09fc5, #d291bc);
 }
 
 .logo-text {
+    font-family: 'Segoe UI', sans-serif;
     font-weight: bold;
+    font-size: 1.25rem;
 }
 
-/* Wrapper */
+.logo-icon {
+    font-size: 1.5rem;
+}
+
+/* Contenitore centrale */
 .success-wrapper {
     flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+    padding: 40px 20px;
 }
 
-/* Box contenitore */
+/* Box contenente il messaggio */
 .success-box {
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 50px 60px;
+    background-color: #fff8fc;
     border-radius: 20px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.15);
-    text-align: center;
-    max-width: 650px;
+    padding: 50px 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
     width: 100%;
 }
 
-.success-box i {
-    font-size: 3rem;
-    color: rgb(83, 166, 166);
+/* Icona check */
+.icon-success {
+    font-size: 3.5rem;
+    color: #d36cb4;
     margin-bottom: 20px;
 }
 
+/* Titolo */
 .success-box h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    color: rgb(83, 166, 166);
-    margin-bottom: 10px;
+    font-size: 2.3rem;
+    color: #a64ca6;
 }
 
+/* Testo */
 .success-box p {
-    font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 25px;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
 }
 
 /* Bottone */
-.btn-return-home {
-    background-color: rgb(83, 166, 166);
+.btn-gradient {
+    background: linear-gradient(to right, #f093fb, #f5576c);
     color: white;
+    font-weight: 600;
     border: none;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: bold;
+    transition: background 0.3s ease;
     text-decoration: none;
-    transition: background-color 0.3s ease;
 }
 
-.btn-return-home:hover {
-    background-color: rgb(70, 150, 150);
+.btn-gradient:hover {
+    background: linear-gradient(to right, #e678b3, #f15b7c);
     color: white;
 }

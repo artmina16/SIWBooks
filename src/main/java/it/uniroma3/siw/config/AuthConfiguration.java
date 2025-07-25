@@ -14,7 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import it.uniroma3.siw.service.CustomOAuth2UserService;
+import it.uniroma3.siw.security.copy.CustomAccessDeniedHandler;
 
 import javax.sql.DataSource;
 
@@ -26,6 +26,8 @@ public class AuthConfiguration {
 
     @Autowired
     private DataSource dataSource;
+   
+
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
@@ -46,9 +48,9 @@ public class AuthConfiguration {
     }
 
     @Bean
-    protected SecurityFilterChain configure(HttpSecurity httpSecurity, CustomOAuth2UserService customOAuth2UserService) throws Exception {
+    protected SecurityFilterChain configure(HttpSecurity httpSecurity,CustomAccessDeniedHandler customAccessDeniedHandler) throws Exception {
         httpSecurity
-            .csrf().disable()
+            //.csrf().disable()
             .cors().disable()
 
             .authorizeHttpRequests()
@@ -59,6 +61,8 @@ public class AuthConfiguration {
                 .requestMatchers(HttpMethod.POST, "/register", "/login").permitAll()
                 // Accesso solo per amministratori
                 .requestMatchers("/admin/**").hasAuthority(ADMIN_ROLE)
+                .requestMatchers(HttpMethod.POST, "/admin/book/delete/**").hasAuthority(ADMIN_ROLE)
+
                 // Tutte le altre richieste richiedono autenticazione
                 .anyRequest().authenticated()
 
@@ -68,22 +72,17 @@ public class AuthConfiguration {
                 .permitAll()
                 .defaultSuccessUrl("/success",true)
                 .failureUrl("/login?error=true")
-                .and()
-                .oauth2Login(oauth2 -> oauth2
-                        .loginPage("/login")
-                        .defaultSuccessUrl("/success", true)
-                        .userInfoEndpoint(userInfo -> userInfo
-                                .userService(customOAuth2UserService)
-                        )
-                )
-              // LOGOUT:
-                .logout()
+                //LOGOUT
+                .and().logout()
                 .logoutUrl("/logout")
                 .logoutSuccessUrl("/")
                 .invalidateHttpSession(true)
                 .deleteCookies("JSESSIONID")
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .clearAuthentication(true).permitAll();
+                .clearAuthentication(true).permitAll()
+                .and()
+                .exceptionHandling()
+                .accessDeniedHandler(customAccessDeniedHandler);
         return httpSecurity.build();
     }
 }

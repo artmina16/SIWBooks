@@ -1,148 +1,86 @@
 body {
-    font-family: 'Poppins', sans-serif;
-	background-color:	#d1eeee;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fef3f8;
 }
 
+/* Navbar */
 .custom-navbar {
-    background-color: rgb(83, 166, 166);
+  background: linear-gradient(to right, #d291bc, #e0bbe4);
 }
 
 .logo-icon {
-  font-size: 1.6rem;
-  margin-top: 2px; /* abbassa leggermente l'icona */
+  font-size: 1.5rem;
 }
 
-
-/* Escludi solo il logo (in modo diretto) */
 .logo-text {
-  font-family: 'Segoe UI', sans-serif;
   font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Base style for all buttons */
-button.btn,
-a.btn {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    border-radius: 30px;
-    padding: 10px 20px;
-    font-size: 16px;
-    transition: all 0.3s ease;
+/* Titoli */
+.section-title {
+  color: #a64ca6;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
-/* Success button (Save, Update Username) */
-.btn-success {
-    background-color: rgb(83, 166, 166);
-    border-color: rgb(83, 166, 166);
-    color: white;
+/* Card */
+.edit-card {
+  border-radius: 15px;
+  background-color: white;
+  border: 2px solid #f3d1f4;
 }
 
-.btn-success:hover {
-    background-color: rgb(83, 166, 166);
-    border-color: rgb(83, 166, 166);
+/* Input */
+.form-input {
+  border-radius: 12px;
+  border: 1px solid #e3b7e6;
+  background-color: #fff8fc;
+  transition: border 0.3s ease;
 }
 
-/* Primary button (Change password) */
-.btn-primary {
-    background-color: rgb(83, 166, 166);
-    border-color: rgb(83, 166, 166);
-    color: white;
+.form-input:focus {
+  border-color: #c17ccf;
+  box-shadow: 0 0 0 0.25rem rgba(193, 124, 207, 0.25);
 }
 
-.btn-primary:hover {
-    background-color: rgb(83, 166, 166);
-    border-color: rgb(83, 166, 166);
+/* Bottoni */
+.btn-pink {
+  background: linear-gradient(to right, #ec75a6, #f9a1c2);
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 30px;
 }
 
-
-/* Outline secondary button (Back to profile) */
-.btn-outline-secondary {
-    color: rgb(83, 166, 166);
-    border-color: rgb(83, 166, 166);
+.btn-pink:hover {
+  background: linear-gradient(to right, #e55b99, #f993b8);
 }
 
-.btn-outline-secondary:hover {
-    background-color: rgb(156, 205, 205) !important;
-    color: white;
+.btn-lilac {
+  background: linear-gradient(to right, #b88de9, #d4b4f3);
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 30px;
 }
 
-
-
-/* Outline light navbar button */
-.btn-outline-light {
-    color: #fff;
-    border-color: #fff;
+.btn-lilac:hover {
+  background: linear-gradient(to right, #a076d8, #cba7f0);
 }
 
-.btn-outline-light:hover {
-    background-color: #fff;
-    color: #212529;
+/* Back button */
+.back-btn {
+  padding: 8px 18px;
+  font-size: 0.95rem;
 }
 
-/* Focus style for all buttons */
-button.btn:focus,
-a.btn:focus {
-    outline: none;
-    box-shadow: 0 0 0 0.2rem rgb(156, 205, 205); 
-	background-color: rgb(156, 205, 205) !important;
-    transition: box-shadow 0.2s ease-in-out;
-	border-color: rgb(156, 205, 205) !important;
-}
-
-/* Focus style specifico per btn-success */
-.btn-success:focus {
-    box-shadow: 0 0 0 0.2rem rgb(156, 205, 205);
-	background-color: rgb(156, 205, 205) !important;
-	border-color: rgb(156, 205, 205) !important;
-
-}
-
-/* Focus style specifico per btn-primary */
-.btn-primary:focus {
-    box-shadow: 0 0 0 0.2rem rgb(156, 205, 205);
-	background-color: rgb(156, 205, 205) !important;
-	border-color: rgb(156, 205, 205) !important;
-
-}
-
-/* Focus style specifico per btn-outline-secondary */
-.btn-outline-secondary:focus {
-    box-shadow: 0 0 0 0.2rem rgb(156, 205, 205);
-	background-color: rgb(156, 205, 205) !important;
-	border-color: rgb(156, 205, 205) !important;
-
-}
-
-/* Focus style specifico per btn-outline-light */
-.btn-outline-light:focus {
-    box-shadow: 0 0 0 0.2rem rgb(156, 205, 205);
-	background-color: rgb(156, 205, 205) !important;
-	border-color: rgb(156, 205, 205) !important;
-
-}
-
-/* Titolo principale (verde scuro personalizzato) */
-.custom-title-success {
-    color: rgb(83, 166, 166); 
-}
-
-/* Titolo per azioni (blu elegante) */
-.custom-title-primary {
-    color: rgb(83, 166, 166);
-}
-
-/* Titolo per sicurezza (rosso tenue) */
-.custom-title-danger {
-    color: rgb(83, 166, 166); 
-}
-
-
-input:focus,
-textarea:focus,
-select:focus {
-    outline: none;
-    border-color: rgb(156, 205, 205) !important ;     
-    box-shadow: 0 0 0 0.25rem rgba(83, 166, 166,0.25) !important; 
-    transition: all 0.2s ease-in-out;
+/* Alert */
+.alert-danger {
+  border-radius: 12px;
+  background-color: #ffe0eb;
+  color: #b60042;
+  border: 1px solid #f5b5c9;
+  font-size: 0.95rem;
 }

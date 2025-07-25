@@ -124,7 +124,7 @@ public class ReviewController {
 		return "/admin/manageReviews";
 	}
 	
-	@GetMapping("/admin/review/delete/{id}")
+	@PostMapping("/admin/review/delete/{id}")
 	public String deleteAdminReview(@PathVariable("id") Long reviewId, Model model, RedirectAttributes redirectAttributes) {
 		Review review = this.reviewService.findById(reviewId);
 		Credentials credential = review.getCredential();

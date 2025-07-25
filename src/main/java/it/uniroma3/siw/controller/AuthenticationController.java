@@ -71,15 +71,6 @@ public class AuthenticationController {
             }
         } 
 
-     // Caso login con Google (OAuth2User)
-        else if (principal instanceof OAuth2User oauth2User) {
-            String email = oauth2User.getAttribute("email");
-            Credentials credentials = credentialsService.getCredentials(email); // Assicurati che l'email sia usata come username nel DB
-
-            if (credentials != null && credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
-                return "admin/homeAdmin";
-            }
-        }
         return "home";
     }
 

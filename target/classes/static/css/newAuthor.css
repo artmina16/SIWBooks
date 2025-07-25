@@ -1,66 +1,91 @@
+/* Layout base */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.custom-navbar {
-  background-color: rgb(83, 166, 166);
-}
-
-/* Applica Poppins a tutto */
-html, body, input, button, select, textarea {
   font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #fce4ec, #f3e5f5);
 }
 
-/* Escludi solo il logo (in modo diretto) */
+/* Navbar */
+.navbar {
+  background-color: #fff0f5;
+}
+
 .logo-text {
   font-family: 'Segoe UI', sans-serif;
   font-weight: bold;
   font-size: 1.25rem;
+  color: #ec407a;
 }
 
+/* Form container */
 .form-container {
-    background-color:	#d1eeee;
-    border-radius: 16px;
-    padding: 30px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
+/* Titolo */
 h2 {
-    font-weight: bold;
-    color: #333;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #6a1b9a;
+  border-bottom: 3px solid #ec407a;
+  display: inline-block;
+  padding-bottom: 6px;
+  margin-bottom: 30px;
 }
 
-.btn-primary {
-    background-color: rgb(83, 166, 166);
-    border-color: rgb(83, 166, 166);
-}
-
-.btn-primary:hover {
-    background-color: rgb(70, 150, 150);
-    border-color: rgb(70, 150, 150);
-}
-
-/* Selettore con focus */
-select.form-select:focus {
-  border-color: rgb(70, 150, 150);
-  box-shadow: 0 0 0 0.2rem rgba(83, 166, 166, 0.25);
-}
-
+/* Campi input */
 input,
 textarea,
 select {
-  border: 2px solid rgb(83, 166, 166) !important;
-  border-radius: 6px;
+  border: 2px solid #ec407a !important;
+  border-radius: 10px;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: rgb(70, 150, 150) !important;
+  border-color: #d81b60 !important;
   box-shadow: none !important;
   outline: none;
+}
+
+/* Pulsanti */
+.btn-primary {
+  background-color: #ec407a;
+  border-color: #ec407a;
+  border-radius: 25px;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: #d81b60;
+  border-color: #d81b60;
+}
+
+.btn-secondary {
+  background-color: #f3e5f5;
+  border-color: #ec407a;
+  color: #6a1b9a;
+  border-radius: 25px;
+  font-weight: 500;
+}
+
+.btn-secondary:hover {
+  background-color: #e1bee7;
+  color: #4a148c;
+  border-color: #d81b60;
+}
+
+/* Messaggi di errore */
+.alert-danger {
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: #c62828;
+  background-color: #fdecea;
+  border: 1px solid #f8bbd0;
 }

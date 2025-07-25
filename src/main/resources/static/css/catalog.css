@@ -1,98 +1,86 @@
-/* Reset e impostazioni generali */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-html {
-  overflow-y: scroll;
-}
-
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #e8f5f5;
-    color: #333;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #fce4ec, #f3e5f5);
+  color: #333;
 }
 
-/* Navbar personalizzata */
-.custom-navbar {
-    background-color: rgb(83, 166, 166);
+/* Navbar */
+.text-pink {
+  color: #ec407a !important;
+}
+.btn-outline-pink {
+  border: 2px solid #ec407a;
+  color: #ec407a;
+  border-radius: 25px;
+}
+.btn-outline-pink:hover {
+  background-color: #fce4ec;
 }
 
-.logo-text {
-    font-weight: bold;
-    font-size: 1.3rem;
-}
-
-/* Titolo principale */
+/* Titolo */
 h2.text-center {
-    font-weight: 600;
-    font-size: 2rem;
-    color: #333;
-    border-bottom: 2px solid rgb(83, 166, 166);
-    display: inline-block;
-    padding-bottom: 0.3rem;
-    margin-bottom: 2rem;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #ec407a;
+  border-bottom: 2px solid #ec407a;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  margin-bottom: 2rem;
 }
 
-/* Immagine libro */
-.book-cover {
-  height: 200px;
-  width: auto;
-  object-fit: cover;
-  border-radius: 4px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 1rem;
-}
-
+/* Scheda libro */
 .book-card-custom {
   background-color: white;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 1rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  top: -5px;
 }
-
 .book-card-custom:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+.book-cover {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
 
+/* Titolo libro */
 .book-title {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 0.3rem;
   color: #333;
 }
 
-
-
+/* Stelle voto */
 .star-full {
   color: #f4c150;
 }
-
 .star-empty {
   color: #ccc;
   text-shadow: 0 0 1px #999;
 }
 
-
-/* Search bar */
 .custom-search {
   display: flex;
   align-items: center;
-  border: 2px solid #55bdbd;
+  border: 2px solid #ec407a;
   border-radius: 50px;
   overflow: hidden;
   background-color: #fff;
   max-width: 500px;
   width: 100%;
-  margin: 0 auto;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .custom-search:focus-within {
-  border-color: #2c9999;
-  box-shadow: 0 0 6px rgba(85, 189, 189, 0.4);
+  border-color: #d81b60;
+  box-shadow: 0 0 6px rgba(236, 64, 122, 0.4);
 }
 
 .search-input {
@@ -109,49 +97,19 @@ h2.text-center {
 }
 
 .search-button {
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
   border: none;
   padding: 10px 20px;
-  color: #2c9999;
+  color: #ec407a;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-  border-left: 1px solid rgb(255, 255, 255);
+  border-left: 1px solid #fff;
 }
 
 .search-button:hover {
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
 }
 
-
-/* Container spacing */
-.container.py-5 {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
-}
-
-/* Autori e info libro */
-.book-link .small {
-    font-size: 0.75rem;
-    color: #666;
-    line-height: 1.3;
-}
-
-.no-books-found {
-    background-color: #ffffffcc; /* bianco leggero con trasparenza */
-    border: 1px solid #bcd;
-    border-radius: 10px;
-    padding: 2rem;
-    max-width: 500px;
-    margin: 0 auto;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
-}
-
-.no-books-found i {
-    color: #aaa;
-}
-
-/* Ingrandimento icona lente al passaggio del mouse */
 .search-button .fa-search {
   transition: transform 0.2s ease;
 }
@@ -160,3 +118,14 @@ h2.text-center {
   transform: scale(1.3);
 }
 
+
+/* Nessun libro trovato */
+.no-books-found {
+  background-color: #ffffffcc;
+  border: 1px solid #f8bbd0;
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}

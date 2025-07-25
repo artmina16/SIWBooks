@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Your Profile</title>
+    <title>Il tuo profilo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap + Icons -->
@@ -45,11 +45,11 @@
 
 					<div class="d-flex flex-wrap gap-5">
 					  <p class="mb-1">
-					    <strong>First Name:</strong>
+					    <strong>Nome:</strong>
 					    <span th:text="${user.name}">John</span>
 					  </p>
 					  <p class="mb-1">
-					    <strong>Last Name:</strong>
+					    <strong>Cognome:</strong>
 					    <span th:text="${user.surname}">Doe</span>
 					  </p>
 					</div>
@@ -62,7 +62,7 @@
                     <p><strong>Username:</strong> <span th:text="${credentials.username}">johndoe</span></p>
 
                     <a th:href="@{/edit}" class="btn custom-edit-btn mt-3">
-                        <i class="bi bi-pencil-square me-1"></i>Edit Profile
+                        <i class="bi bi-pencil-square me-1"></i>Modifica Profilo
                     </a>
                 </div>
             </div>
@@ -70,7 +70,7 @@
 			<!-- Sezione utenti registrati -->
 			<div class="card shadow-sm mt-4">
 			  <div class="card-header custom-header text-white">
-			    <h5 class="mb-0"><i class="bi bi-people me-2"></i>Registered Users</h5>
+			    <h5 class="mb-0"><i class="bi bi-people me-2"></i>Utenti registrati</h5>
 			  </div>
 			  <div class="card-body">
 			    <div th:if="${#lists.isEmpty(users)}">
@@ -81,11 +81,11 @@
 			        <table class="table table-striped align-middle">
 			          <thead>
 			            <tr class="custom-table-head">
-			              <th>Name</th>
-			              <th>Surname</th>
+			              <th>Nome</th>
+			              <th>Cognome</th>
 			              <th>Email</th>
 			              <th>Username</th>
-			              <th>Role</th>
+			              <th>Ruolo</th>
 			            </tr>
 			          </thead>
 			          <tbody>

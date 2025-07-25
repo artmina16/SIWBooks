@@ -1,17 +1,18 @@
 body {
     font-family: 'Segoe UI', sans-serif;
-    background-color: #e8f5f5;
+    background-color: #fde7f3;
     color: #333;
     margin: 0;
 }
 
 .custom-navbar {
-    background-color: rgb(83, 166, 166);
+    background-color: #ec407a;
 }
 
 .logo-text {
     font-weight: bold;
     font-size: 1.3rem;
+    color: white;
 }
 
 .book-cover {
@@ -23,26 +24,19 @@ body {
 .book-title {
     font-size: 2rem;
     font-weight: 700;
-    color: rgb(0, 0, 0);
+    color: #880e4f;
 }
 
-.book-year {
-    font-size: 1.1rem;
+.book-year, .book-description {
+    font-size: 1rem;
     color: #444;
 }
 
-.book-description {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
-}
-
-/* Sezione autori */
 .authors-title {
     font-size: 1.3rem;
     font-weight: 600;
-    color: #333;
-    border-bottom: 2px solid rgb(83, 166, 166);
+    color: #ad1457;
+    border-bottom: 2px solid #ec407a;
     display: inline-block;
     padding-bottom: 0.2rem;
 }
@@ -64,7 +58,7 @@ body {
 .author-name {
     font-size: 1rem;
     font-weight: 500;
-    color: rgb(83, 166, 166);
+    color: #ec407a;
 }
 
 .author-link:hover .author-name {
@@ -72,74 +66,43 @@ body {
 }
 
 .custom-review-btn {
-  color: rgb(255, 255, 255);
-  border: 2px solid rgb(83, 166, 166);
-  background-color: rgb(83, 166, 166);
-  padding: 8px 20px;
-  font-weight: 600;
-  border-radius: 50px;
-  transition: all 0.3s ease;
+    color: white;
+    background-color: #ec407a;
+    border: 2px solid #ec407a;
+    padding: 8px 20px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
 }
 
 .custom-review-btn:hover {
-  background-color: rgb(83, 166, 166);
-  color: white;
-  text-decoration: none;
-}
-.card-body h5 {
-  color: #333;
+    background-color: #d81b60;
 }
 
-.bi-star-fill {
-  font-size: 1rem;
-}
-.bi-star-fill.text-secondary {
-  color: #ccc !important; /* grigio più chiaro */
-}
 .custom-user-review {
-  background-color: rgb(255, 255, 255); /* sfondo chiaro personalizzato */
-  border: 1px solid rgb(192, 192, 192); /* bordo grigio chiaro */
-  border-left: 5px solid rgb(83, 166, 166); /* bordo sinistro verde (Bootstrap success) */
-  border-radius: 0.5rem;
+    background-color: white;
+    border: 1px solid #f8bbd0;
+    border-left: 5px solid #ec407a;
+    border-radius: 0.5rem;
 }
 
-
-
-/* Pulsante "Edit Review" personalizzato */
 .custom-edit-btn {
-  background-color: rgb(83, 166, 166);
-  color: rgb(255, 255, 255);
-  border: none;
-  transition: background-color 0.3s ease;
+    background-color: #ba2d65;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
 }
 
 .custom-edit-btn:hover {
-  background-color: rgb(83, 166, 166);
-  color: rgb(255, 255, 255);
+    background-color: #ad1457;
 }
 
-.delete:hover{
-	background-color:rgb(192, 192, 192);
+.delete:hover {
+    background-color: #f8bbd0;
 }
 
-
-.star-rating-wrapper {
-  position: relative;
-  display: inline-block;
-  font-size: 1.3rem;
-  line-height: 1;
-}
-
-.stars-empty {
-  color: #ddd;
-}
-
-.stars-full {
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #ffc107;
-  overflow: hidden;
-  white-space: nowrap;
-  pointer-events: none;
+.text-highlight {
+    color: #ec407a;
+    font-weight: 600;
+    text-decoration: none;
 }

@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>New Author</title>
+    <title>Nuovo Autore</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- Bootstrap CSS -->
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons (optional) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
     <link rel="stylesheet" th:href="@{/css/newAuthor.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -25,86 +24,91 @@
           <span class="logo-text">siw-Books</span>
         </a>
       </div>
-	  <div class="col-6 d-flex justify-content-end align-items-center">
-      	<a href="/" class="btn btn-outline-light rounded-pill px-4 fw-bold">Home</a>
+      <div class="col-6 d-flex justify-content-end align-items-center">
+        <a href="/" class="btn btn-outline-light rounded-pill px-4 fw-bold">Home</a>
       </div>
     </div>
   </div>
 </nav>
 
-<!-- Form Container -->
+<!-- Form principale -->
 <div class="container mt-5 form-container">
-    <h2 class="mb-4">Add a New Author</h2>
+  <h2 class="mb-4">Aggiungi un nuovo autore</h2>
 
-    <form th:action="@{/author/new}" method="post" th:object="${author}" enctype="multipart/form-data" class="needs-validation" novalidate>
-		<div class = "globalError" th:if="${#fields.hasGlobalErrors()}">
-           <span class = "error" th:each="err : ${#fields.globalErrors()}" th:text="${err}" style="color:red"></span>
-        </div>
-        <!-- Name -->
-        <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input th:field="*{name}" type="text" class="form-control" id="name">
-            <div th:if="${#fields.hasErrors('name')}" class="alert alert-danger p-2 py-1 mt-2">
-                <i class="bi bi-exclamation-circle"></i>
-                <span th:errors="*{name}"></span>
-            </div>
-        </div>
+  <form th:action="@{/author/new}" method="post" th:object="${author}" enctype="multipart/form-data" class="needs-validation" novalidate>
 
-        <!-- Surname -->
-        <div class="mb-3">
-            <label for="surname" class="form-label">Surname</label>
-            <input th:field="*{surname}" type="text" class="form-control" id="surname">
-            <div th:if="${#fields.hasErrors('surname')}" class="alert alert-danger p-2 py-1 mt-2">
-                <i class="bi bi-exclamation-circle"></i>
-                <span th:errors="*{surname}"></span>
-            </div>
-        </div>
+    <!-- Errori globali -->
+    <div class="globalError" th:if="${#fields.hasGlobalErrors()}">
+      <span class="error text-danger fw-bold" th:each="err : ${#fields.globalErrors()}" th:text="${err}"></span>
+    </div>
 
-        <!-- Born Year -->
-        <div class="mb-3">
-            <label for="bornYear" class="form-label">Date of Birth</label>
-            <input th:field="*{bornYear}" type="date" class="form-control" id="bornYear">
-            <div th:if="${#fields.hasErrors('bornYear')}" class="alert alert-danger p-2 py-1 mt-2">
-                <i class="bi bi-exclamation-circle"></i>
-                <span th:errors="*{bornYear}"></span>
-            </div>
-        </div>
+    <!-- Nome -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Nome</label>
+      <input th:field="*{name}" type="text" class="form-control" id="name">
+      <div class="alert alert-danger p-2 py-1 mt-2 d-flex align-items-center gap-2" th:if="${#fields.hasErrors('name')}">
+        <i class="bi bi-exclamation-circle"></i>
+        <span th:errors="*{name}"></span>
+      </div>
+    </div>
 
-        <!-- Death Year -->
-        <div class="mb-3">
-            <label for="deathYear" class="form-label">Date of Death (optional)</label>
-            <input th:field="*{deathYear}" type="date" class="form-control" id="deathYear">
-        </div>
+    <!-- Cognome -->
+    <div class="mb-3">
+      <label for="surname" class="form-label">Cognome</label>
+      <input th:field="*{surname}" type="text" class="form-control" id="surname">
+      <div class="alert alert-danger p-2 py-1 mt-2 d-flex align-items-center gap-2" th:if="${#fields.hasErrors('surname')}">
+        <i class="bi bi-exclamation-circle"></i>
+        <span th:errors="*{surname}"></span>
+      </div>
+    </div>
 
-        <!-- Nationality -->
-        <div class="mb-3">
-            <label for="nationality" class="form-label">Nationality</label>
-            <input th:field="*{nationality}" type="text" class="form-control" id="nationality">
-            <div th:if="${#fields.hasErrors('nationality')}" class="alert alert-danger p-2 py-1 mt-2">
-                <i class="bi bi-exclamation-circle"></i>
-                <span th:errors="*{nationality}"></span>
-            </div>
-        </div>
+    <!-- Data di nascita -->
+    <div class="mb-3">
+      <label for="bornYear" class="form-label">Data di nascita</label>
+      <input th:field="*{bornYear}" type="date" class="form-control" id="bornYear">
+      <div class="alert alert-danger p-2 py-1 mt-2 d-flex align-items-center gap-2" th:if="${#fields.hasErrors('bornYear')}">
+        <i class="bi bi-exclamation-circle"></i>
+        <span th:errors="*{bornYear}"></span>
+      </div>
+    </div>
 
-        <!-- Description -->
-        <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            <textarea th:field="*{description}" class="form-control" id="description" rows="4"></textarea>
-        </div>
+    <!-- Data di morte -->
+    <div class="mb-3">
+      <label for="deathYear" class="form-label">Data di morte (facoltativa)</label>
+      <input th:field="*{deathYear}" type="date" class="form-control" id="deathYear">
+    </div>
 
-        <!-- Image File Upload -->
-        <div class="mb-3">
-            <label for="image" class="form-label">Upload Image</label>
-            <input type="file" name="image" class="form-control" id="image">
-        </div>
+    <!-- Nazionalità -->
+    <div class="mb-3">
+      <label for="nationality" class="form-label">Nazionalità</label>
+      <input th:field="*{nationality}" type="text" class="form-control" id="nationality">
+      <div class="alert alert-danger p-2 py-1 mt-2 d-flex align-items-center gap-2" th:if="${#fields.hasErrors('nationality')}">
+        <i class="bi bi-exclamation-circle"></i>
+        <span th:errors="*{nationality}"></span>
+      </div>
+    </div>
 
-        <!-- Buttons -->
-        <button type="submit" class="btn btn-primary">Save Author</button>
-        <a href="/admin/formNewBook" class="btn btn-secondary">Back to Book Form</a>
-		<a href="/admin/manageAuthors" class="btn btn-secondary">Cancel</a>
-    </form>
+    <!-- Descrizione -->
+    <div class="mb-3">
+      <label for="description" class="form-label">Descrizione</label>
+      <textarea th:field="*{description}" class="form-control" id="description" rows="4"></textarea>
+    </div>
+
+    <!-- Immagine -->
+    <div class="mb-3">
+      <label for="image" class="form-label">Carica immagine</label>
+      <input type="file" name="image" class="form-control" id="image">
+    </div>
+
+    <!-- Pulsanti -->
+    <button type="submit" class="btn btn-primary">Salva autore</button>
+    <a href="/admin/formNewBook" class="btn btn-secondary">Torna al libro</a>
+    <a href="/admin/manageAuthors" class="btn btn-secondary">Annulla</a>
+
+  </form>
 </div>
 
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
